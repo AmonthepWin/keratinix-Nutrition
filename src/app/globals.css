@@ -10,6 +10,11 @@
     --color-surface-light: #f4f1ed;
     --color-border-dark: #4a4a4a;
 
+    /* Hanfu Pastels from Illustration */
+    --color-hanfu-sage: #e8eee6;
+    --color-hanfu-rose: #f9ecee;
+    --color-hanfu-ice: #eef2f5;
+
     --font-display: var(--font-space-grotesk), sans-serif;
     --font-serif: var(--font-noto-serif), serif;
     --font-arcane: var(--font-cinzel), serif;
