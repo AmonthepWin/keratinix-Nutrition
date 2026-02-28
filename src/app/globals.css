@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #b08d85;
+    --color-secondary: #a8b5a3;
+    --color-accent: #d8c7bf;
+    --color-ink: #2d2d2d;
+    --color-background-light: #fcfbf9;
+    --color-background-dark: #1a1918;
+    --color-surface-light: #f4f1ed;
+    --color-border-dark: #4a4a4a;
+
+    --font-display: var(--font-space-grotesk), sans-serif;
+    --font-serif: var(--font-noto-serif), serif;
+    --font-arcane: var(--font-cinzel), serif;
+
+    --radius: 0px;
+}
+
+@layer base {
+    body {
+        @apply bg-background-light text-ink selection:bg-primary selection:text-white;
+        overflow-x: hidden;
+    }
+}
+
+@layer components {
+    .compendium-border {
+        border: 1px solid var(--color-ink);
+        position: relative;
+        background-color: var(--color-background-light);
+    }
+
+    .compendium-border::before {
+        content: '';
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        right: 3px;
+        bottom: 3px;
+        border: 0.5px solid var(--color-ink);
+        pointer-events: none;
+        opacity: 0.2;
+    }
+
+    .manhua-mask {
+        filter: grayscale(100%) contrast(110%) brightness(105%) sepia(10%);
+        mix-blend-mode: multiply;
+        opacity: 0.9;
+    }
+
+    .wash-sage {
+        background: radial-gradient(circle at center, rgba(168, 181, 163, 0.2) 0%, transparent 70%);
+    }
+
+    .wash-rose {
+        background: radial-gradient(circle at center, rgba(216, 199, 191, 0.25) 0%, transparent 70%);
+    }
+
+    .wash-peach {
+        background: radial-gradient(circle at center, rgba(224, 201, 194, 0.2) 0%, transparent 70%);
+    }
+
+    .ink-accent {
+        background-image: radial-gradient(circle, var(--color-ink) 0.5px, transparent 0.5px);
+        background-size: 8px 8px;
+        opacity: 0.08;
+    }
+
+    .vertical-rl {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+    }
+
+    @keyframes float-slow {
+
+        0%,
+        100% {
+            transform: translateY(0) scale(1);
+        }
+
+        50% {
+            transform: translateY(-30px) scale(1.05);
+        }
+    }
+
+    .animate-float-slow {
+        animation: float-slow 15s ease-in-out infinite;
+    }
+
+    @keyframes float-delayed {
+
+        0%,
+        100% {
+            transform: translateY(0) scale(1);
+        }
+
+        50% {
+            transform: translateY(25px) scale(0.95);
+        }
+    }
+
+    .animate-float-delayed {
+        animation: float-delayed 18s ease-in-out infinite;
+    }
+}
